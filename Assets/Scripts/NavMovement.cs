@@ -21,13 +21,18 @@ public class NavMovement : MonoBehaviour {
         agent = gameObject.GetComponent<NavMeshAgent>();
     }
     int lockPos = 0;
+    bool done = false;
     void Update()
     {
         if (goNow)
         {
             eye.GetComponent<CameraFilterPack_FX_Drunk>().gameObject.SetActive(true);
-            GetComponent<AudioSource>().Play();
-            // print(agent.remainingDistance);
+            if (!done)
+            {
+                GetComponent<AudioSource>().Play();
+                done = true;
+            }
+                // print(agent.remainingDistance);
             if (i == -1 || (agent.remainingDistance < .001f && i < myList.Count))
             {
                 transform.rotation = Quaternion.Euler(lockPos, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
