@@ -19,7 +19,7 @@ public class BuildingHit : MonoBehaviour {
     IEnumerator ChangeLevel()
     {
         // Wait for three seconds before beginning the fade
-        yield return new WaitForSeconds(3.0f); 
+        yield return new WaitForSeconds(5.0f); 
         // Fade out and load new level
         float fadeTime = GameObject.Find("Quad").GetComponent<FadingEyeblink>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
