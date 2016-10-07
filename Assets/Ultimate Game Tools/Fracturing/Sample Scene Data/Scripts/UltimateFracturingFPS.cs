@@ -89,7 +89,7 @@ public class UltimateFracturingFPS : MonoBehaviour
                 newObject.transform.position   = this.transform.position;
                 newObject.transform.localScale = new Vector3(ObjectScale, ObjectScale, ObjectScale);
                 newObject.GetComponent<Rigidbody>().mass       = ObjectMass;
-                newObject.GetComponent<Rigidbody>().solverIterationCount = 255;
+                newObject.GetComponent<Rigidbody>().solverIterations = 255;
                 newObject.GetComponent<Rigidbody>().AddForce(this.transform.forward * InitialObjectSpeed, ForceMode.VelocityChange);
 
                 DieTimer dieTimer = newObject.AddComponent<DieTimer>() as DieTimer;
