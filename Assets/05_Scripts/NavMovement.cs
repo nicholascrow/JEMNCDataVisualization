@@ -24,6 +24,11 @@ public class NavMovement : MonoBehaviour {
     bool done = false;
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.P)) {
+            NavMovement.goNow = true;
+        }
+
+
         if (goNow)
         {
             eye.GetComponent<CameraFilterPack_FX_Drunk>().gameObject.SetActive(true);
@@ -33,7 +38,7 @@ public class NavMovement : MonoBehaviour {
                 done = true;
             }
                 // print(agent.remainingDistance);
-            if (i == -1 || (agent.remainingDistance < .001f && i < myList.Count))
+            if (i == -1 || (agent.remainingDistance < .001f && i < myList.Count-1))
             {
                 transform.rotation = Quaternion.Euler(lockPos, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
                 i++;
